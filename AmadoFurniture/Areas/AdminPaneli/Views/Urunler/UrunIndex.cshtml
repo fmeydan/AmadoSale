@@ -1,0 +1,58 @@
+﻿@model IEnumerable<AmadoFurniture.Areas.AdminPaneli.Urunler>
+
+@{
+    ViewBag.Title = "UrunIndex";
+    Layout = "~/Areas/AdminPaneli/Views/Shared/_AdminSablon.cshtml";
+}
+
+<h2>UrunIndex</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UrunAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ToplamStok)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BirimFiyati)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kategoriler.KategoriAdi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrunAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Aciklama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ToplamStok)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BirimFiyati)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kategoriler.KategoriAdi)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UrunlerID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UrunlerID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UrunlerID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,99 @@
+﻿@model AmadoFurniture.Areas.AdminPaneli.Personeller
+
+@{
+    ViewBag.Title = "PersonelDetay";
+    Layout = "~/Areas/AdminPaneli/Views/Shared/_AdminSablon.cshtml";
+}
+
+<h2>PersonelDetay</h2>
+
+<div>
+   
+    <hr />
+   
+        <dl class="dl-vertical">
+            <dt>
+                @Html.DisplayNameFor(model => model.PersonelTC)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PersonelTC)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Adi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Adi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Soyadi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Soyadi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Cinsiyeti)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Cinsiyeti)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Telefonu)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Telefonu)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MailAdresi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MailAdresi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Bolumu)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Bolumu)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Adresi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Adresi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.GirisTarihi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GirisTarihi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Aktifmi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Aktifmi)
+            </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PersonellerID }, htmlAttributes: new { @class = "btn btn-warning" }) |
+    @Html.ActionLink("Listeye Geri Dön", "PersonelIndex", new { id = Model.PersonellerID }, htmlAttributes: new { @class = "btn btn-primary"})
+</p>

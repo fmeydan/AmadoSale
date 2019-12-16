@@ -1,0 +1,99 @@
+﻿@model IEnumerable<AmadoFurniture.Areas.AdminPaneli.Personeller>
+
+@{
+    ViewBag.Title = "PersonelIndex";
+    Layout = "~/Areas/AdminPaneli/Views/Shared/_AdminSablon.cshtml";
+}
+
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Personeller</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    
+
+                        <p>
+                            @Html.ActionLink("Personel Ekle", "personelEkle")
+                        </p>
+                        <table class="table table-hover">
+                          
+                            <tr class="table-primary">
+                                <th>
+                                    TC
+                                </th>
+                                <th>
+                                    Ad - Soyad
+                                </th>
+                                <th>
+                                    Cinsiyet
+                                </th>
+                                <th>
+                                    Telefon
+                                </th>
+                                <th>
+                                    Mail
+                                </th>
+                                <th>
+                                    Bolüm
+                                </th>
+                                @*<th>
+                                    Adres
+                                </th>*@
+                                <th>
+                                    Giriş Tarihi
+                                </th>
+                                <th>
+                                    Aktif
+                                </th>
+                                <th></th>
+                            </tr>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PersonelTC)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Adi) @Html.DisplayFor(modelItem => item.Soyadi)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Cinsiyeti)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Telefonu)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.MailAdresi)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Bolumu)
+                                    </td>
+                                    @*<td>
+                                        @Html.DisplayFor(modelItem => item.Adresi)
+                                    </td>*@
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.GirisTarihi);
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Aktifmi)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Düzenle", "Edit", new { id=item.PersonellerID }, htmlAttributes: new { @class = "btn btn-info p-0" })
+                                        @Html.ActionLink("Detay", "PersonelDetay", new { detayPID=item.PersonellerID }, htmlAttributes: new { @class = "btn btn-primary p-0" })
+                                        @Html.ActionLink("Sil", "PersonelSil", new { silPID=item.PersonellerID }, htmlAttributes: new { @class = "btn btn-danger p-0" })
+                                    </td>
+                                </tr>
+                            }
+
+                        </table>
+                    </div></div></div></div></section>
+
+
+                        @*********************************************************************@
+
+                      
